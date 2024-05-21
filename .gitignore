@@ -5,7 +5,7 @@ target/
 
 ### IntelliJ IDEA ###
 .gitignore
-*.idea
+.idea/
 /idea
 .idea
 .idea/modules.xml
@@ -40,3 +40,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/.idea/
