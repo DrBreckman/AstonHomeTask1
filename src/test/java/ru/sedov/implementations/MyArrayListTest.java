@@ -3,7 +3,10 @@ package ru.sedov.implementations;
 import org.junit.jupiter.api.Test;
 import ru.sedov.MyList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -61,7 +64,7 @@ public class MyArrayListTest {
     void addByIndex(){
         MyList<Integer> list = getList();
 
-        assertThrows(IndexOutOfBoundsException.class, () -> list.add(5, 3));
+        assertThrows(IndexOutOfBoundsException.class, () -> list.add(5, 4));
         assertThrows(IndexOutOfBoundsException.class, () -> list.add(5, -1));
 
         list.add(6, 0);
@@ -69,6 +72,23 @@ public class MyArrayListTest {
 
         list.add(7, 3);
         assertEquals(0, Arrays.compare(list.toArray(Integer.class), new Integer[] { 6, 1, 3, 7, 2 } ));
+
+
+    }
+
+    @Test
+    void addByIndexMore(){
+        MyList<Integer> list = getEmptyList();
+
+        int size = 1500;
+        List<Integer> arr = new ArrayList<>();
+        for(int i = 0; i < size; i++){
+            arr.add(0, i);
+            list.add(i, 0);
+        }
+
+        assertEquals(size, list.size());
+        assertEquals(0, Arrays.compare(list.toArray(Integer.class), arr.toArray(new Integer[]{})));
     }
 
     @Test
