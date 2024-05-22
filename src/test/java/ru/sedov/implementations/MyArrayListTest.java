@@ -9,10 +9,19 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MyArrayListTest {
+
+    /**
+     * Генератор для создания пустой коллекции MyArrayList
+     * @return пустую коллекцию MyArrayList
+     */
     private static MyList<Integer> getEmptyList(){
         return new MyArrayList<>();
     }
 
+    /**
+     * Генератор для создания не пустой коллекции MyArrayList заполненной тремя элементами.
+     * @return не пустую коллекцию MyArrayList
+     */
     public static MyList<Integer> getList() {
         return new MyArrayList<>(){{
             add(1);
